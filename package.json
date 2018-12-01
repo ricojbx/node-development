@@ -1,5 +1,5 @@
 {
-  "name": "node-notes",
+  "name": "notes",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,21 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
+    "lodash": "^4.17.11",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricojbx/node-development.git"
+  },
+  "author": "Christopher Rossi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricojbx/node-development/issues"
+  },
+  "homepage": "https://github.com/ricojbx/node-development#readme",
+  "description": ""
 }

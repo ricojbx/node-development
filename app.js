@@ -11,8 +11,8 @@ var app = express();
 console.log('Starting app.js');
 const fs = require('fs');
 const os = require('os');
+const _ = require('lodash');
 const notes = require('./notes.js');
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,14 +43,20 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+let filteredArray = _.uniq(['Chris', 1, 'Chris', 1, 2, 3, 4]);
+console.log(filteredArray);
+/*
+console.log(_.isString(true));
+console.log(_.isString('Christopher'));
 let result = notes.add(9, 10);
 console.log(`Results ${result}`);
-/*let user = os.userInfo();
+let user = os.userInfo();
 fs.appendFile('greetings.txt',`Hello ${user.username}! You are ${notes.age}`, function (err) {
   if (err) {
     console.log('Unable to write to file');
   }
-});*/
+});
+*/
 
 
 module.exports = app;
