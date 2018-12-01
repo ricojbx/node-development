@@ -9,9 +9,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 console.log('Starting app.js');
+
 const fs = require('fs');
-const os = require('os');
 const _ = require('lodash');
+
 const notes = require('./notes.js');
 
 // view engine setup
@@ -42,21 +43,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-let filteredArray = _.uniq(['Ted', 1, 'Ted', 1, 2, 3, 4]);
-console.log(filteredArray);
-/*
-console.log(_.isString(true));
-console.log(_.isString('Christopher'));
-let result = notes.add(9, 10);
-console.log(`Results ${result}`);
-let user = os.userInfo();
-fs.appendFile('greetings.txt',`Hello ${user.username}! You are ${notes.age}`, function (err) {
-  if (err) {
-    console.log('Unable to write to file');
-  }
-});
-*/
-
 
 module.exports = app;
