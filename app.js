@@ -43,7 +43,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-let filteredArray = _.uniq(['Chris', 1, 'Chris', 1, 2, 3, 4]);
+let filteredArray = _.uniq(['Ted', 1, 'Ted', 1, 2, 3, 4]);
 console.log(filteredArray);
 /*
 console.log(_.isString(true));
