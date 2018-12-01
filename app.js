@@ -8,8 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+console.log('Starting app.js');
 const fs = require('fs');
 const os = require('os');
+const notes = require('./notes.js');
 
 
 // view engine setup
@@ -40,14 +42,15 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-console.log('Starting App');
 
-let user = os.userInfo();
-fs.appendFile('greetings.txt',`Hello ${user.username}!`, function (err) {
+let result = notes.add(9, 10);
+console.log(`Results ${result}`);
+/*let user = os.userInfo();
+fs.appendFile('greetings.txt',`Hello ${user.username}! You are ${notes.age}`, function (err) {
   if (err) {
     console.log('Unable to write to file');
   }
-});
+});*/
 
 
 module.exports = app;
